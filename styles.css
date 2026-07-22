@@ -83,6 +83,7 @@ main,.site-header,.footer{position:relative;z-index:1}
 
 .mobile-nav{display:flex;flex-direction:column;gap:6px;padding:16px 24px 24px;
   background:rgba(14,10,24,.98);border-bottom:1px solid var(--border-2)}
+.mobile-nav[hidden]{display:none}
 .mobile-nav a{padding:12px 4px;color:var(--muted);font-weight:500;border-bottom:1px solid var(--border-2)}
 .mobile-nav a:last-child{border:0}
 .mobile-nav .btn{margin-top:10px;justify-content:center}
