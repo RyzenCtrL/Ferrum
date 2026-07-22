@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FERRUM — металлоконструкции под ключ: заборы, навесы, ворота, свайный фундамент</title>
+<meta name="description" content="FERRUM — проектирование, изготовление и монтаж металлоконструкций под ключ: заборы, навесы, ворота, свайный фундамент, спортплощадки, бытовки. Бесплатный выезд на замер, работа по договору.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ambient background glows -->
+<div class="bg-field" aria-hidden="true">
+  <div class="glow glow--1"></div>
+  <div class="glow glow--2"></div>
+  <div class="grid-lines"></div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="top">
+  <div class="container header__inner">
+    <a href="#top" class="brand" aria-label="FERRUM — на главную">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28" fill="none">
+          <path d="M6 4h20v6h-6v4h5v6h-5v8h-6V4z" fill="url(#fg1)"/>
+          <defs><linearGradient id="fg1" x1="6" y1="4" x2="26" y2="30" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/>
+          </linearGradient></defs>
+        </svg>
+      </span>
+      <span class="brand__name">FERRUM<span class="brand__dot">.</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#process">Этапы</a>
+      <a href="#works">Объекты</a>
+      <a href="#why">О нас</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+
+    <div class="header__actions">
+      <a href="tel:+79000000000" class="header__phone">+7 (900) 000-00-00</a>
+      <a href="#contact" class="btn btn--primary btn--sm spec-btn">
+        <span class="spec-btn__fx" aria-hidden="true"></span>
+        <span class="spec-btn__label">Оставить заявку</span>
+      </a>
+    </div>
+
+    <button class="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#services">Услуги</a>
+    <a href="#process">Этапы работы</a>
+    <a href="#works">Объекты</a>
+    <a href="#why">О нас</a>
+    <a href="#faq">Вопросы</a>
+    <a href="tel:+79000000000" class="mobile-nav__phone">+7 (900) 000-00-00</a>
+    <a href="#contact" class="btn btn--primary spec-btn">
+      <span class="spec-btn__fx" aria-hidden="true"></span>
+      <span class="spec-btn__label">Оставить заявку</span>
+    </a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <span class="eyebrow hi">Металлоконструкции • проектирование и монтаж</span>
+      <h1 class="hero__title hi--title">
+        Металлоконструкции<br>под ключ —<br>
+        <span class="grad-text">от замера до монтажа</span>
+      </h1>
+      <p class="hero__sub hi">
+        Заборы, навесы, ворота, свайный фундамент, спортплощадки и бытовки.
+        Берём проект на себя целиком: выезжаем на замер, считаем смету, изготавливаем и монтируем.
+      </p>
+      <div class="hero__cta hi">
+        <a href="#contact" class="btn btn--primary btn--lg spec-btn">
+          <span class="spec-btn__fx" aria-hidden="true"></span>
+          <span class="spec-btn__label">Бесплатная консультация</span>
+        </a>
+        <a href="#services" class="btn btn--ghost btn--lg">Смотреть услуги</a>
+      </div>
+
+      <ul class="hero__marks hi">
+        <li><svg class="ic" viewBox="0 0 20 20"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Бесплатный выезд на замер</li>
+        <li><svg class="ic" viewBox="0 0 20 20"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Работаем по договору</li>
+        <li><svg class="ic" viewBox="0 0 20 20"><path d="M5 10l3 3 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>Гарантия на монтаж</li>
+      </ul>
+    </div>
+
+    <!-- signature "живой" UI — трекер монтажа -->
+    <div class="hero__panel reveal" aria-hidden="true">
+      <div class="tracker">
+        <div class="tracker__head">
+          <div>
+            <span class="tracker__label">Проект</span>
+            <span class="tracker__title">Навес + откатные ворота</span>
+          </div>
+          <span class="tracker__badge">В работе</span>
+        </div>
+
+        <div class="tracker__stages">
+          <div class="stage is-done">
+            <span class="stage__dot"></span>
+            <span class="stage__name">Заявка принята</span>
+            <span class="stage__meta">день 1</span>
+          </div>
+          <div class="stage is-done">
+            <span class="stage__dot"></span>
+            <span class="stage__name">Замер на объекте</span>
+            <span class="stage__meta">день 2</span>
+          </div>
+          <div class="stage is-active">
+            <span class="stage__dot"></span>
+            <span class="stage__name">Изготовление</span>
+            <span class="stage__meta">идёт</span>
+          </div>
+          <div class="stage">
+            <span class="stage__dot"></span>
+            <span class="stage__name">Монтаж и сдача</span>
+            <span class="stage__meta">—</span>
+          </div>
+        </div>
+
+        <div class="tracker__bar">
+          <div class="tracker__fill"></div>
+        </div>
+
+        <div class="tracker__foot">
+          <div class="metric">
+            <span class="metric__val" data-count="62">0</span><span class="metric__unit">%</span>
+            <span class="metric__cap">Готовность</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val" data-count="14">0</span><span class="metric__unit"> дн.</span>
+            <span class="metric__cap">Срок под ключ</span>
+          </div>
+          <div class="metric">
+            <span class="metric__val">2</span><span class="metric__unit"> бригады</span>
+            <span class="metric__cap">На объекте</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- directions strip -->
+<section class="strip reveal">
+  <div class="container strip__inner">
+    <span>Заборы</span><span>Навесы</span><span>Ворота</span><span>Свайный фундамент</span><span>Спортплощадки</span><span>Бытовки</span>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Услуги</span>
+      <h2 class="section__title">Одно направление или объект целиком</h2>
+      <p class="section__lead">Шесть направлений металлоконструкций. Берём как отдельную задачу, так и весь объект — от проекта до сдачи.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M4 34V12l6-4 6 4 6-4 6 4 6-4v22" stroke="url(#g-fence)" stroke-width="2" stroke-linejoin="round"/><path d="M4 22h34M10 8v26M22 8v26M34 8v26" stroke="url(#g-fence)" stroke-width="2"/><defs><linearGradient id="g-fence" x1="4" y1="8" x2="38" y2="34"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Заборы</h3>
+        <p>Профнастил, евроштакетник, 3D-сетка, кованые секции. Установка на бетонируемые или винтовые опоры с учётом рельефа участка.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M4 16L20 6l16 10" stroke="url(#g-canopy)" stroke-width="2" stroke-linejoin="round"/><path d="M8 16v18M32 16v18M8 20h24" stroke="url(#g-canopy)" stroke-width="2"/><defs><linearGradient id="g-canopy" x1="4" y1="6" x2="36" y2="34"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Навесы</h3>
+        <p>Для авто, входных групп и зон отдыха. Каркас из профтрубы, кровля из поликарбоната или профлиста. Расчёт под снеговую нагрузку региона.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><rect x="5" y="10" width="30" height="22" rx="1" stroke="url(#g-gate)" stroke-width="2"/><path d="M20 10v22M5 16h30" stroke="url(#g-gate)" stroke-width="2"/><defs><linearGradient id="g-gate" x1="5" y1="10" x2="35" y2="32"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Ворота</h3>
+        <p>Откатные, распашные и секционные. С автоматикой и калиткой. Монтаж закладных, направляющих и приводов — под ваш проём.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M12 4v22M28 4v22" stroke="url(#g-pile)" stroke-width="2"/><path d="M12 26l-4 10M28 26l4 10M12 12h16M12 19h16" stroke="url(#g-pile)" stroke-width="2"/><defs><linearGradient id="g-pile" x1="12" y1="4" x2="28" y2="36"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Свайный фундамент</h3>
+        <p>Винтовые сваи под дома, пристройки, заборы и навесы. Подбор длины и диаметра под грунт, монтаж с контролем уровня и обвязкой.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="15" stroke="url(#g-sport)" stroke-width="2"/><path d="M20 5v30M5 20h30" stroke="url(#g-sport)" stroke-width="2"/><circle cx="20" cy="20" r="5" stroke="url(#g-sport)" stroke-width="2"/><defs><linearGradient id="g-sport" x1="5" y1="5" x2="35" y2="35"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Спортплощадки</h3>
+        <p>Ограждения, ворота, стойки и каркасы для дворовых и школьных площадок. Антивандальное исполнение и порошковая покраска.</p>
+      </article>
+
+      <article class="card reveal">
+        <div class="card__ic">
+          <svg viewBox="0 0 40 40" fill="none"><rect x="5" y="14" width="30" height="20" stroke="url(#g-cabin)" stroke-width="2"/><path d="M5 14l4-6h22l4 6M15 34V22h10v12" stroke="url(#g-cabin)" stroke-width="2" stroke-linejoin="round"/><defs><linearGradient id="g-cabin" x1="5" y1="8" x2="35" y2="34"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs></svg>
+        </div>
+        <h3>Бытовки</h3>
+        <p>Металлокаркасные бытовки для стройплощадки, дачи и хозяйственных нужд. Утепление и внутренняя отделка под задачу.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section section--alt" id="process">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Как мы работаем</span>
+      <h2 class="section__title">Четыре шага от заявки до сдачи</h2>
+      <p class="section__lead">Прозрачный порядок работ. На каждом этапе вы понимаете, что происходит и сколько это стоит.</p>
+    </div>
+
+    <ol class="steps">
+        <li class="step reveal">
+          <div class="step__top">
+            <span class="step__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg>
+            </span>
+            <span class="step__num">01</span>
+          </div>
+          <h3>Заявка и консультация</h3>
+          <p>Оставляете заявку, обсуждаем задачу и предварительный бюджет. Отвечаем на вопросы по материалам и срокам.</p>
+        </li>
+        <li class="step reveal">
+          <div class="step__top">
+            <span class="step__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M4 21v-4L16 5l4 4L8 21z"/><path d="M14 7l3 3"/></svg>
+            </span>
+            <span class="step__num">02</span>
+          </div>
+          <h3>Выезд на замер</h3>
+          <p>Бесплатно приезжаем на объект, снимаем размеры, оцениваем грунт и подъезд. Без замера точную смету не считаем.</p>
+        </li>
+        <li class="step reveal">
+          <div class="step__top">
+            <span class="step__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M6 3h9l3 3v15H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg>
+            </span>
+            <span class="step__num">03</span>
+          </div>
+          <h3>Смета и договор</h3>
+          <p>Готовим смету с составом работ и материалов. Фиксируем стоимость и сроки в договоре — без роста цены по ходу работ.</p>
+        </li>
+        <li class="step reveal">
+          <div class="step__top">
+            <span class="step__badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4L7 20H4v-3z"/><path d="M13 7l4 4"/></svg>
+            </span>
+            <span class="step__num">04</span>
+          </div>
+          <h3>Изготовление и монтаж</h3>
+          <p>Изготавливаем конструкцию, монтируем на объекте и сдаём работу. На монтаж даём гарантию по договору.</p>
+        </li>
+      </ol>
+  </div>
+</section>
+
+<!-- ============ WORKS ============ -->
+<section class="section" id="works">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Объекты</span>
+      <h2 class="section__title">Примеры по направлениям</h2>
+      <p class="section__lead">Заборы, навесы, свайный фундамент, площадки и бытовки — по каждому направлению работаем от проекта до монтажа.</p>
+    </div>
+
+    <div class="carousel reveal" id="works-carousel">
+      <div class="carousel__viewport" tabindex="0" role="region" aria-roledescription="карусель" aria-label="Примеры объектов">
+        <ul class="carousel__track">
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Забор-700.webp 700w, Новое/opt/Забор-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Забор-1200.jpg" srcset="Новое/opt/Забор-700.jpg 700w, Новое/opt/Забор-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Забор из евроштакетника с кирпичными столбами" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Заборы · евроштакетник, кирпичные столбы</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Навес-700.webp 700w, Новое/opt/Навес-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Навес-1200.jpg" srcset="Новое/opt/Навес-700.jpg 700w, Новое/opt/Навес-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Навес с двускатной крышей на металлическом каркасе" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Навесы · каркас и кровля</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Каркас-700.webp 700w, Новое/opt/Каркас-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Каркас-1200.jpg" srcset="Новое/opt/Каркас-700.jpg 700w, Новое/opt/Каркас-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Обвязка свайного фундамента под объект" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Свайный фундамент · обвязка под объект</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Свай-700.webp 700w, Новое/opt/Свай-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Свай-1200.jpg" srcset="Новое/opt/Свай-700.jpg 700w, Новое/opt/Свай-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Винтовая свая с оголовком, вкрученная в грунт" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Свайный фундамент · винтовая свая</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Площадка-700.webp 700w, Новое/opt/Площадка-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Площадка-1200.jpg" srcset="Новое/opt/Площадка-700.jpg 700w, Новое/opt/Площадка-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Спортивная площадка с силовыми тренажёрами" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Спортплощадки · силовые тренажёры</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Бытовка-700.webp 700w, Новое/opt/Бытовка-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Бытовка-1200.jpg" srcset="Новое/opt/Бытовка-700.jpg 700w, Новое/opt/Бытовка-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Металлокаркасная бытовка с панорамным остеклением" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Бытовки · мобильный блок</figcaption>
+            </figure>
+          </li>
+          <li class="carousel__slide">
+            <figure class="shot">
+              <picture>
+                <source type="image/webp" srcset="Новое/opt/Балка-700.webp 700w, Новое/opt/Балка-1200.webp 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw">
+                <img src="Новое/opt/Балка-1200.jpg" srcset="Новое/opt/Балка-700.jpg 700w, Новое/opt/Балка-1200.jpg 1200w" sizes="(max-width:640px) 82vw, (max-width:960px) 48vw, 33vw" alt="Профильная труба на складе металлопроката" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Материалы · профильная труба</figcaption>
+            </figure>
+          </li>
+        </ul>
+      </div>
+
+      <button type="button" class="carousel__arrow carousel__arrow--prev" aria-label="Предыдущий слайд" data-carousel-prev>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="carousel__arrow carousel__arrow--next" aria-label="Следующий слайд" data-carousel-next>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></svg>
+      </button>
+
+      <div class="carousel__dots" role="tablist" aria-label="Выбор слайда" data-carousel-dots></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY ============ -->
+<section class="section section--alt" id="why">
+  <div class="container">
+    <div class="section__head reveal">
+      <span class="eyebrow">Почему FERRUM</span>
+      <h2 class="section__title">Понятно, по договору, без сюрпризов</h2>
+    </div>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs><linearGradient id="whyg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient></defs>
+    </svg>
+
+    <div class="why-tabs reveal">
+      <div class="why-nav" role="tablist" aria-label="Почему выбирают FERRUM">
+        <button class="why-nav__item is-active" role="tab" aria-selected="true" aria-controls="why-panel-0" id="why-tab-0" data-why-tab="0">
+          <span class="why-nav__ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></span>
+          <span class="why-nav__text">
+            <span class="why-nav__title">Одно окно на весь объект</span>
+            <span class="why-nav__hint">Проект, изготовление и монтаж — в одних руках</span>
+          </span>
+        </button>
+        <button class="why-nav__item" role="tab" aria-selected="false" aria-controls="why-panel-1" id="why-tab-1" data-why-tab="1">
+          <span class="why-nav__ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M6 3h9l3 3v15H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>
+          <span class="why-nav__text">
+            <span class="why-nav__title">Смета до начала работ</span>
+            <span class="why-nav__hint">Стоимость фиксируем в договоре после замера</span>
+          </span>
+        </button>
+        <button class="why-nav__item" role="tab" aria-selected="false" aria-controls="why-panel-2" id="why-tab-2" data-why-tab="2">
+          <span class="why-nav__ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+          <span class="why-nav__text">
+            <span class="why-nav__title">Гарантия на монтаж</span>
+            <span class="why-nav__hint">Срок и условия — в договоре по объекту</span>
+          </span>
+        </button>
+        <button class="why-nav__item" role="tab" aria-selected="false" aria-controls="why-panel-3" id="why-tab-3" data-why-tab="3">
+          <span class="why-nav__ic"><svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+          <span class="why-nav__text">
+            <span class="why-nav__title">Связь удобным способом</span>
+            <span class="why-nav__hint">WhatsApp, Telegram, звонок или заявка на сайте</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="why-panel">
+        <div class="why-panel__slide is-active" role="tabpanel" id="why-panel-0" aria-labelledby="why-tab-0">
+          <p class="why-panel__text">Проект, изготовление и монтаж — в одних руках. Не нужно искать отдельно проектировщика, сварщика и бригаду монтажников: по всем этапам отвечает один подрядчик и один договор.</p>
+          <div class="why-diagram why-flow">
+            <div class="why-flow__row">
+              <div class="why-flow__node"><span class="why-flow__dot"></span><span>Замер</span></div>
+              <span class="why-flow__line"></span>
+              <div class="why-flow__node"><span class="why-flow__dot"></span><span>Проект</span></div>
+              <span class="why-flow__line"></span>
+              <div class="why-flow__node"><span class="why-flow__dot"></span><span>Изготовление</span></div>
+              <span class="why-flow__line"></span>
+              <div class="why-flow__node"><span class="why-flow__dot"></span><span>Монтаж</span></div>
+            </div>
+            <p class="why-diagram__tag">Один подрядчик · один договор на все этапы</p>
+          </div>
+        </div>
+
+        <div class="why-panel__slide" role="tabpanel" id="why-panel-1" aria-labelledby="why-tab-1" hidden>
+          <p class="why-panel__text">Стоимость и состав работ фиксируем в договоре после замера — до начала монтажа вы точно знаете итоговую сумму. Цена не растёт по ходу работ: это условие договора, а не обещание.</p>
+          <div class="why-diagram why-compare">
+            <div class="why-compare__row">
+              <span class="why-compare__label">Смета в договоре</span>
+              <div class="why-compare__bar"><span></span></div>
+            </div>
+            <div class="why-compare__row">
+              <span class="why-compare__label">Итоговый счёт</span>
+              <div class="why-compare__bar"><span></span></div>
+            </div>
+            <p class="why-diagram__tag">Без доплат по ходу работ — условие договора</p>
+          </div>
+        </div>
+
+        <div class="why-panel__slide" role="tabpanel" id="why-panel-2" aria-labelledby="why-tab-2" hidden>
+          <p class="why-panel__text">На выполненные монтажные работы даём гарантию отдельно от гарантии производителя на материалы. Условия и срок прописываем в договоре по каждому объекту — до начала работ.</p>
+          <div class="why-diagram why-checklist">
+            <div class="why-checklist__badge"><svg viewBox="0 0 24 24" fill="none" stroke="url(#whyg)" stroke-width="1.8"><path d="M12 3l7 3v6c0 4.5-3 8-7 9-4-1-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <ul class="why-checklist__list">
+              <li>Сварные соединения</li>
+              <li>Крепёж и геометрия конструкции</li>
+              <li>Кровля и обшивка</li>
+            </ul>
+          </div>
+          <p class="why-diagram__tag">Срок и условия гарантии — по договору</p>
+        </div>
+
+        <div class="why-panel__slide" role="tabpanel" id="why-panel-3" aria-labelledby="why-tab-3" hidden>
+          <p class="why-panel__text">Пишите в WhatsApp или Telegram, звоните по телефону или оставляйте заявку на сайте — отвечаем и подсказываем по вашей задаче тем способом, которым вам удобнее.</p>
+          <div class="why-diagram why-channels">
+            <a class="why-channel" href="tel:+79000000000">
+              <span class="why-channel__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2c-8 0-15-7-15-15a2 2 0 0 1 2-2z"/></svg></span>
+              Звонок
+            </a>
+            <a class="why-channel" href="#">
+              <span class="why-channel__ic why-channel__ic--wa"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.1 1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg></span>
+              WhatsApp
+            </a>
+            <a class="why-channel" href="#">
+              <span class="why-channel__ic why-channel__ic--tg"><svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.9 4.3l-3 14.1c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-.9.5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.5 13.1l-4.5-1.4c-1-.3-1-1 .2-1.4l17.5-6.8c.8-.3 1.5.2 1.2 1.6z"/></svg></span>
+              Telegram
+            </a>
+            <a class="why-channel" href="#contact">
+              <span class="why-channel__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+              Заявка на сайте
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="container container--narrow">
+    <div class="section__head reveal">
+      <span class="eyebrow">Вопросы</span>
+      <h2 class="section__title">Частые вопросы</h2>
+    </div>
+
+    <div class="faq">
+      <details class="faq__item reveal">
+        <summary><span class="faq__q-row"><span class="faq__q" aria-hidden="true">?</span><span>Выезд на замер правда бесплатный?</span></span></summary>
+        <div class="faq__body"><p>Да, выезд специалиста на замер в пределах обслуживаемой зоны бесплатный и ни к чему не обязывает. По удалённым объектам условия обсуждаем отдельно.</p></div>
+      </details>
+      <details class="faq__item reveal">
+        <summary><span class="faq__q-row"><span class="faq__q" aria-hidden="true">?</span><span>Как рассчитывается стоимость?</span></span></summary>
+        <div class="faq__body"><p>Точную стоимость считаем после замера — она зависит от размеров, материалов, типа опор и условий на объекте. Итог фиксируем в смете и договоре.</p></div>
+      </details>
+      <details class="faq__item reveal">
+        <summary><span class="faq__q-row"><span class="faq__q" aria-hidden="true">?</span><span>Сколько занимает работа под ключ?</span></span></summary>
+        <div class="faq__body"><p>Срок зависит от типа конструкции и объёма. Ориентир по вашему проекту назовём после замера и согласования сметы.</p></div>
+      </details>
+      <details class="faq__item reveal">
+        <summary><span class="faq__q-row"><span class="faq__q" aria-hidden="true">?</span><span>Вы работаете по договору?</span></span></summary>
+        <div class="faq__body"><p>Да. Состав работ, стоимость, сроки и гарантию на монтаж прописываем в договоре до начала работ.</p></div>
+      </details>
+      <details class="faq__item reveal">
+        <summary><span class="faq__q-row"><span class="faq__q" aria-hidden="true">?</span><span>С какими объектами вы работаете?</span></span></summary>
+        <div class="faq__body"><p>Частные участки и дома, а также коммерческие и хозяйственные объекты: заборы, навесы, ворота, свайный фундамент, спортплощадки и бытовки.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / CTA ============ -->
+<section class="section cta" id="contact">
+  <div class="container cta__inner reveal">
+    <div class="cta__copy">
+      <span class="eyebrow">Оставьте заявку</span>
+      <h2 class="section__title">Обсудим ваш объект и посчитаем смету</h2>
+      <p class="section__lead">Опишите задачу — перезвоним, ответим на вопросы и согласуем бесплатный выезд на замер.</p>
+
+      <ul class="contact-list">
+        <li>
+          <span class="contact-list__cap">Телефон</span>
+          <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+        </li>
+        <li>
+          <span class="contact-list__cap">Почта</span>
+          <a href="mailto:info@example.com">info@example.com</a>
+        </li>
+        <li>
+          <span class="contact-list__cap">Адрес</span>
+          <span>г. Пример, ул. Образцовая, 1 (заглушка)</span>
+        </li>
+      </ul>
+
+      <div class="messengers">
+        <a href="#" class="msg msg--wa" aria-label="Написать в WhatsApp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20zm4.4-6c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.1-.3 0-.5l-.7-1.7c-.2-.4-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3a3 3 0 0 0-.9 2.2c0 1.3 1 2.6 1.1 2.8.1.2 1.9 3 4.7 4.1 1.7.7 2.3.7 3.1.6.5-.1 1.4-.6 1.6-1.1.2-.6.2-1 .1-1.1-.1-.1-.2-.2-.4-.3z"/></svg>
+          WhatsApp
+        </a>
+        <a href="#" class="msg msg--tg" aria-label="Написать в Telegram">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.9 4.3l-3 14.1c-.2 1-.8 1.2-1.7.8l-4.6-3.4-2.2 2.1c-.2.2-.5.5-.9.5l.3-4.6 8.4-7.6c.4-.3-.1-.5-.6-.2L7.5 13.1l-4.5-1.4c-1-.3-1-1 .2-1.4l17.5-6.8c.8-.3 1.5.2 1.2 1.6z"/></svg>
+          Telegram
+        </a>
+      </div>
+    </div>
+
+    <form class="lead-form" id="lead-form" onsubmit="return false" novalidate>
+      <div class="stepper__row" role="list" aria-label="Шаги оформления заявки">
+        <button type="button" class="stepper__dot is-active" data-dot="1" aria-current="step">
+          <span class="stepper__dot-inner">
+            <svg class="stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="stepper__num">1</span>
+          </span>
+        </button>
+        <span class="stepper__line" data-line="1"></span>
+        <button type="button" class="stepper__dot" data-dot="2">
+          <span class="stepper__dot-inner">
+            <svg class="stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="stepper__num">2</span>
+          </span>
+        </button>
+        <span class="stepper__line" data-line="2"></span>
+        <button type="button" class="stepper__dot" data-dot="3">
+          <span class="stepper__dot-inner">
+            <svg class="stepper__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+            <span class="stepper__num">3</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="stepper__viewport">
+        <div class="stepper__track" id="stepper-track">
+
+          <section class="stepper__step is-active" data-step-panel="1">
+            <h3 class="stepper__title">Что нужно сделать?</h3>
+            <p class="stepper__hint">Выберите направление — можно несколько.</p>
+            <div class="chip-group" role="group" aria-label="Направление работ">
+              <button type="button" class="chip" data-value="Заборы">Заборы</button>
+              <button type="button" class="chip" data-value="Навесы">Навесы</button>
+              <button type="button" class="chip" data-value="Ворота">Ворота</button>
+              <button type="button" class="chip" data-value="Свайный фундамент">Свайный фундамент</button>
+              <button type="button" class="chip" data-value="Спортплощадки">Спортплощадки</button>
+              <button type="button" class="chip" data-value="Бытовки">Бытовки</button>
+              <button type="button" class="chip" data-value="Другое">Другое</button>
+            </div>
+            <span class="field-error" data-error-for="services" hidden></span>
+            <div class="field">
+              <label for="task">Детали задачи (необязательно)</label>
+              <textarea id="task" rows="2" placeholder="Например: навес для авто 6×4 и откатные ворота"></textarea>
+            </div>
+          </section>
+
+          <section class="stepper__step" data-step-panel="2">
+            <h3 class="stepper__title">Как с вами связаться?</h3>
+            <div class="field">
+              <label for="name">Как к вам обращаться</label>
+              <div class="input-wrap">
+                <input id="name" type="text" placeholder="Имя" autocomplete="name">
+                <svg class="field__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="field-error" data-error-for="name" hidden></span>
+            </div>
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <div class="input-wrap">
+                <input id="phone" type="tel" inputmode="numeric" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+                <svg class="field__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <span class="field-error" data-error-for="phone" hidden></span>
+            </div>
+          </section>
+
+          <section class="stepper__step" data-step-panel="3">
+            <h3 class="stepper__title">Проверьте и отправьте</h3>
+            <dl class="stepper__summary">
+              <div><dt>Направление</dt><dd data-summary="services">—</dd></div>
+              <div><dt>Детали</dt><dd data-summary="task">—</dd></div>
+              <div><dt>Имя</dt><dd data-summary="name">—</dd></div>
+              <div><dt>Телефон</dt><dd data-summary="phone">—</dd></div>
+            </dl>
+          </section>
+
+        </div>
+      </div>
+
+      <div class="stepper__footer">
+        <button type="button" class="stepper__back" data-stepper-back hidden>Назад</button>
+        <button type="button" class="btn btn--primary spec-btn" data-stepper-next>
+          <span class="spec-btn__fx" aria-hidden="true"></span>
+          <span class="spec-btn__label">Далее</span>
+        </button>
+        <button type="submit" class="btn btn--primary btn--lg spec-btn" data-stepper-submit hidden>
+          <span class="spec-btn__fx" aria-hidden="true"></span>
+          <span class="spec-btn__label">Отправить заявку</span>
+        </button>
+      </div>
+
+      <p class="lead-form__note">Нажимая кнопку, вы соглашаетесь на обработку данных. Это черновик формы — заявки пока не отправляются.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <span class="brand__name">FERRUM<span class="brand__dot">.</span></span>
+      <p>Металлоконструкции под ключ: проектирование, изготовление и монтаж.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Навигация в подвале">
+      <a href="#services">Услуги</a>
+      <a href="#process">Этапы</a>
+      <a href="#works">Объекты</a>
+      <a href="#faq">Вопросы</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <div class="footer__contact">
+      <a href="tel:+79000000000">+7 (900) 000-00-00</a>
+      <a href="mailto:info@example.com">info@example.com</a>
+      <span>г. Пример, ул. Образцовая, 1</span>
+    </div>
+  </div>
+  <div class="container footer__bottom">
+    <span>© 2026 FERRUM. Черновик сайта. Контакты — заглушки.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
