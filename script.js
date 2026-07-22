@@ -3,20 +3,53 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- mobile nav ---- */
+  /* ---- mobile nav (with focus trap) ---- */
   var burger = document.querySelector('.burger');
   var mobileNav = document.getElementById('mobile-nav');
   if (burger && mobileNav) {
+    function focusableIn(el) {
+      return Array.prototype.slice.call(
+        el.querySelectorAll('a[href], button:not([disabled])')
+      );
+    }
+
+    function closeMobileNav(returnFocus) {
+      burger.setAttribute('aria-expanded', 'false');
+      mobileNav.hidden = true;
+      if (returnFocus) burger.focus();
+    }
+
+    function openMobileNav() {
+      burger.setAttribute('aria-expanded', 'true');
+      mobileNav.hidden = false;
+      var items = focusableIn(mobileNav);
+      if (items.length) items[0].focus();
+    }
+
     burger.addEventListener('click', function () {
       var open = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!open));
-      mobileNav.hidden = open;
+      if (open) closeMobileNav(false); else openMobileNav();
     });
+
     mobileNav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        burger.setAttribute('aria-expanded', 'false');
-        mobileNav.hidden = true;
-      });
+      a.addEventListener('click', function () { closeMobileNav(false); });
+    });
+
+    mobileNav.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeMobileNav(true);
+        return;
+      }
+      if (e.key !== 'Tab') return;
+      var items = focusableIn(mobileNav);
+      if (!items.length) return;
+      var first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
     });
   }
 
