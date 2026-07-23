@@ -761,7 +761,7 @@
   window.addEventListener('scroll', function () {
     var y = window.scrollY;
     if ((y > 8) !== (last > 8) && header) {
-      header.style.boxShadow = y > 8 ? '0 10px 30px -12px rgba(0,0,0,.6)' : 'none';
+      header.style.boxShadow = y > 8 ? '0 10px 30px -12px rgba(109,40,217,.22)' : 'none';
     }
     last = y;
   }, { passive: true });
