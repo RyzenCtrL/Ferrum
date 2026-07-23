@@ -94,6 +94,7 @@ main,.site-header,.footer{position:relative;z-index:1}
   font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:15px;
   padding:12px 22px;border-radius:12px;border:1px solid transparent;cursor:pointer;
   transition:transform .2s var(--ease),box-shadow .3s var(--ease),background .3s;white-space:nowrap}
+.btn[hidden]{display:none}
 .btn--sm{padding:9px 16px;font-size:14px}
 .btn--lg{padding:15px 30px;font-size:16px}
 .btn--block{width:100%}
@@ -457,6 +458,11 @@ main,.site-header,.footer{position:relative;z-index:1}
 .stepper__back:hover{color:var(--fg)}
 .stepper__back[hidden]{display:none}
 .stepper__footer .btn{margin-left:auto}
+
+/* submit button fades/lifts in on the last step instead of just popping in */
+[data-stepper-submit]{opacity:0;transform:translateY(8px) scale(.97)}
+[data-stepper-submit].is-in{opacity:1;transform:none}
+.btn[data-stepper-submit]{transition:opacity .35s var(--ease),transform .25s var(--ease),box-shadow .3s var(--ease),background .3s}
 
 /* ============ FOOTER ============ */
 .footer{border-top:1px solid var(--border-2);padding:56px 0 30px;margin-top:40px}

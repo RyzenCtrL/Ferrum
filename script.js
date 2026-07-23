@@ -406,7 +406,22 @@
     function updateFooter() {
       backBtn.hidden = currentStep === 1;
       nextBtn.hidden = currentStep === totalSteps;
-      submitBtn.hidden = currentStep !== totalSteps;
+
+      var onLast = currentStep === totalSteps;
+      if (!onLast) {
+        submitBtn.hidden = true;
+        submitBtn.classList.remove('is-in');
+        return;
+      }
+      submitBtn.hidden = false;
+      if (reduce) {
+        submitBtn.classList.add('is-in');
+      } else {
+        submitBtn.classList.remove('is-in');
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { submitBtn.classList.add('is-in'); });
+        });
+      }
     }
 
     function updateSummary() {
