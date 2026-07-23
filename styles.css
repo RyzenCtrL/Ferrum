@@ -282,6 +282,19 @@ main,.site-header,.footer{position:relative;z-index:1}
 .shot__title{font-size:13.5px;color:#F5F3FF}
 .shot__meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#C4B5FD}
 
+/* icon placeholder tiles (stand-in for real object photos) — no dark scrim needed,
+   so the caption switches back to the page's own text colors */
+.shot__placeholder{position:absolute;inset:0;display:grid;place-items:center;z-index:0;
+  background-image:linear-gradient(var(--border-2) 1px,transparent 1px),linear-gradient(90deg,var(--border-2) 1px,transparent 1px);
+  background-size:24px 24px;
+  mask-image:radial-gradient(ellipse 65% 65% at 50% 42%,#000 45%,transparent 85%);
+  -webkit-mask-image:radial-gradient(ellipse 65% 65% at 50% 42%,#000 45%,transparent 85%)}
+.shot__placeholder svg{width:56px;height:56px;opacity:.9}
+.shot--feature .shot__placeholder svg{width:84px;height:84px}
+.shot--placeholder figcaption{background:none;border-top:1px solid var(--border-2)}
+.shot--placeholder .shot__title{color:var(--fg)}
+.shot--placeholder .shot__meta{color:var(--violet-300)}
+
 @media(max-width:960px){
   .works-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px}
   .shot--wide{grid-column:span 2}
