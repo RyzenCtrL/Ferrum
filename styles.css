@@ -356,8 +356,7 @@ main,.site-header,.footer{position:relative;z-index:1}
   transition:border-color .25s,transform .25s var(--ease)}
 .why-channel:hover{border-color:var(--violet-500);transform:translateY(-2px)}
 .why-channel__ic{display:grid;place-items:center;width:22px;height:22px;color:var(--violet-400)}
-.why-channel__ic--vk{color:#1D4ED8}
-.why-channel__ic--max{color:var(--violet-400)}
+.why-channel__ic--wa{color:#0C7A3D}
 .why-channel__ic--tg{color:#0A6EA8}
 
 /* ============ FAQ ============ */
@@ -400,10 +399,8 @@ main,.site-header,.footer{position:relative;z-index:1}
 .msg{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:12px;font-weight:500;font-size:15px;
   border:1px solid var(--border);transition:transform .2s var(--ease),background .3s}
 .msg:hover{transform:translateY(-2px)}
-.msg--vk{background:rgba(29,78,216,.1);color:#1D4ED8}
-.msg--vk:hover{background:rgba(29,78,216,.18)}
-.msg--max{background:rgba(139,92,246,.12);color:var(--violet-300)}
-.msg--max:hover{background:rgba(139,92,246,.2)}
+.msg--wa{background:rgba(12,122,61,.1);color:#0C7A3D}
+.msg--wa:hover{background:rgba(12,122,61,.18)}
 .msg--tg{background:rgba(10,110,168,.1);color:#0A6EA8}
 .msg--tg:hover{background:rgba(10,110,168,.18)}
 
