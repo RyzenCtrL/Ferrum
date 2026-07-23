@@ -464,6 +464,41 @@ main,.site-header,.footer{position:relative;z-index:1}
 [data-stepper-submit].is-in{opacity:1;transform:none}
 .btn[data-stepper-submit]{transition:opacity .35s var(--ease),transform .25s var(--ease),box-shadow .3s var(--ease),background .3s}
 
+/* ============ LEAD FORM SUCCESS SCREEN ============ */
+.lead-form__stepper{display:none}
+.lead-form__stepper.is-active{display:block}
+
+.lead-form__success{display:none;flex-direction:column;align-items:center;text-align:center;
+  padding:12px 4px 4px}
+.lead-form__success.is-active{display:flex}
+
+.success-badge{position:relative;margin-bottom:18px}
+.success-badge__ring{stroke-dasharray:172;stroke-dashoffset:172}
+.success-badge__check{stroke-dasharray:40;stroke-dashoffset:40}
+@keyframes success-draw{to{stroke-dashoffset:0}}
+.lead-form__success.is-in .success-badge__ring{animation:success-draw .6s var(--ease) .1s forwards}
+.lead-form__success.is-in .success-badge__check{animation:success-draw .35s var(--ease) .6s forwards}
+
+.success-title{font-size:22px;margin-bottom:10px}
+.success-text{color:var(--muted);font-size:15.5px;line-height:1.6;max-width:360px}
+.success-text strong{color:var(--fg);font-weight:600}
+.success-task{color:var(--muted-2);font-size:13.5px;margin-top:8px;max-width:360px}
+.success-task[hidden]{display:none}
+.success-again{margin-top:22px;background:none;border:1px solid var(--border);color:var(--fg);
+  font-family:'Space Grotesk',sans-serif;font-size:14px;padding:11px 20px;border-radius:12px;
+  cursor:pointer;transition:border-color .2s,background .2s}
+.success-again:hover{border-color:var(--violet-500);background:rgba(139,92,246,.08)}
+.lead-form__success .lead-form__note{margin-top:16px}
+
+/* staggered fade-up, same idiom as .hi in the hero */
+.lead-form__success .s-in{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.lead-form__success.is-in .s-in{opacity:1;transform:none}
+.lead-form__success.is-in .success-title{transition-delay:.15s}
+.lead-form__success.is-in .success-text{transition-delay:.25s}
+.lead-form__success.is-in .success-task{transition-delay:.32s}
+.lead-form__success.is-in .success-again{transition-delay:.4s}
+.lead-form__success.is-in .lead-form__note{transition-delay:.48s}
+
 /* ============ FOOTER ============ */
 .footer{border-top:1px solid var(--border-2);padding:56px 0 30px;margin-top:40px}
 .footer__inner{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}

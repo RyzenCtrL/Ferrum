@@ -600,7 +600,8 @@
       </div>
     </div>
 
-    <form class="lead-form" id="lead-form" onsubmit="return false" novalidate>
+    <form class="lead-form" id="lead-form" novalidate>
+      <div class="lead-form__stepper is-active" id="lead-form-stepper">
       <div class="stepper__row" role="list" aria-label="Шаги оформления заявки">
         <button type="button" class="stepper__dot is-active" data-dot="1" aria-current="step">
           <span class="stepper__dot-inner">
@@ -692,6 +693,28 @@
       </div>
 
       <p class="lead-form__note">Нажимая кнопку, вы соглашаетесь на обработку данных. Это черновик формы — заявки пока не отправляются.</p>
+      </div>
+
+      <div class="lead-form__success" id="lead-form-success">
+        <div class="success-badge s-in" aria-hidden="true">
+          <svg viewBox="0 0 64 64" width="64" height="64" fill="none">
+            <circle cx="32" cy="32" r="29" fill="url(#success-glow)"/>
+            <circle class="success-badge__ring" cx="32" cy="32" r="27" stroke="url(#success-g)" stroke-width="2.5" fill="none"/>
+            <path class="success-badge__check" d="M20 33l8 8 16-18" stroke="url(#success-g)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <defs>
+              <linearGradient id="success-g" x1="4" y1="4" x2="60" y2="60"><stop stop-color="#A78BFA"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+              <radialGradient id="success-glow" cx="50%" cy="50%" r="50%"><stop stop-color="#8B5CF6" stop-opacity=".55"/><stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/></radialGradient>
+            </defs>
+          </svg>
+        </div>
+
+        <h3 class="success-title s-in">Заявка получена</h3>
+        <p class="success-text s-in">Вы указали направление: <strong data-success="services">—</strong>.<br>Свяжемся с <strong data-success="name">—</strong> по номеру <strong data-success="phone">—</strong>.</p>
+        <p class="success-task s-in" data-success-task-wrap hidden>Детали задачи: <span data-success="task">—</span></p>
+
+        <button type="button" class="success-again s-in" data-success-again>Оставить ещё одну заявку</button>
+        <p class="lead-form__note s-in">Черновик: заявка сохранена только в этом окне браузера, никуда не отправлена.</p>
+      </div>
     </form>
   </div>
 </section>

@@ -424,13 +424,95 @@
       }
     }
 
+    function collectFormData() {
+      return {
+        services: chips.filter(function (c) { return c.classList.contains('is-selected'); })
+          .map(function (c) { return c.dataset.value; }),
+        task: document.getElementById('task').value.trim(),
+        name: document.getElementById('name').value.trim(),
+        phone: document.getElementById('phone').value.trim()
+      };
+    }
+
+    function paintFields(attr, data) {
+      var values = {
+        services: data.services.length ? data.services.join(', ') : '—',
+        task: data.task || '—',
+        name: data.name || '—',
+        phone: data.phone || '—'
+      };
+      Object.keys(values).forEach(function (key) {
+        var el = form.querySelector('[' + attr + '="' + key + '"]');
+        if (el) el.textContent = values[key];
+      });
+    }
+
     function updateSummary() {
-      var services = chips.filter(function (c) { return c.classList.contains('is-selected'); })
-        .map(function (c) { return c.dataset.value; });
-      form.querySelector('[data-summary="services"]').textContent = services.length ? services.join(', ') : '—';
-      form.querySelector('[data-summary="task"]').textContent = document.getElementById('task').value.trim() || '—';
-      form.querySelector('[data-summary="name"]').textContent = document.getElementById('name').value.trim() || '—';
-      form.querySelector('[data-summary="phone"]').textContent = document.getElementById('phone').value.trim() || '—';
+      paintFields('data-summary', collectFormData());
+    }
+
+    function fillSuccess() {
+      var data = collectFormData();
+      paintFields('data-success', data);
+      var taskWrap = form.querySelector('[data-success-task-wrap]');
+      if (taskWrap) taskWrap.hidden = !data.task;
+    }
+
+    function showSuccess() {
+      fillSuccess();
+      var stepperEl = document.getElementById('lead-form-stepper');
+      var successEl = document.getElementById('lead-form-success');
+
+      if (reduce) {
+        stepperEl.classList.remove('is-active');
+        successEl.classList.add('is-active', 'is-in');
+        return;
+      }
+
+      var startHeight = form.offsetHeight;
+      form.style.overflow = 'hidden';
+      form.style.height = startHeight + 'px';
+
+      stepperEl.classList.remove('is-active');
+      successEl.classList.add('is-active');
+      var targetHeight = form.scrollHeight;
+
+      requestAnimationFrame(function () {
+        form.style.height = targetHeight + 'px';
+      });
+
+      setTimeout(function () {
+        form.style.height = '';
+        form.style.overflow = '';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { successEl.classList.add('is-in'); });
+        });
+      }, 380);
+    }
+
+    function resetForm() {
+      var successEl = document.getElementById('lead-form-success');
+      var stepperEl = document.getElementById('lead-form-stepper');
+      successEl.classList.remove('is-active', 'is-in');
+      successEl.querySelectorAll('.success-badge__ring, .success-badge__check').forEach(function (el) {
+        el.style.animation = 'none'; void el.offsetWidth; el.style.animation = '';
+      });
+
+      chips.forEach(function (c) { c.classList.remove('is-selected'); });
+      document.getElementById('task').value = '';
+      document.getElementById('name').value = '';
+      document.getElementById('phone').value = '';
+      clearError('name'); clearError('phone');
+      refreshFieldState(document.getElementById('name'), false);
+      refreshFieldState(document.getElementById('phone'), false);
+      var servicesErr = form.querySelector('[data-error-for="services"]');
+      if (servicesErr) servicesErr.hidden = true;
+
+      currentStep = 1;
+      panels.forEach(function (p, i) { p.classList.toggle('is-active', i === 0); });
+      updateIndicators();
+      updateFooter();
+      stepperEl.classList.add('is-active');
     }
 
     function goTo(step, dir) {
@@ -484,6 +566,14 @@
       goTo(currentStep + 1, 1);
     });
     backBtn.addEventListener('click', function () { goTo(currentStep - 1, -1); });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      showSuccess();
+    });
+
+    var successAgainBtn = form.querySelector('[data-success-again]');
+    if (successAgainBtn) successAgainBtn.addEventListener('click', resetForm);
 
     dots.forEach(function (dot, i) {
       dot.addEventListener('click', function () {
