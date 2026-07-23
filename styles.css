@@ -237,46 +237,51 @@ main,.site-header,.footer{position:relative;z-index:1}
    so this higher-specificity rule combines both property lists (order-independent). */
 .step.reveal{transition:opacity .7s var(--ease),transform .45s var(--ease),border-color .3s,box-shadow .3s}
 
-/* ============ GALLERY CARD (shared by carousel slides) ============ */
-.shot{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;
+/* ============ WORKS GRID (bento, static — no carousel) ============ */
+.works-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:210px;gap:20px}
+.shot--feature{grid-column:span 2;grid-row:span 2}
+.shot--wide{grid-column:span 3;grid-row:span 1}
+
+.shot{margin:0;position:relative;border-radius:var(--radius);overflow:hidden;
   border:1px solid var(--border-2);
   background:
     radial-gradient(circle at 30% 20%,rgba(124,58,237,.28),transparent 60%),
     linear-gradient(160deg,var(--card-2),var(--bg-2));
   display:flex;align-items:flex-end;height:100%;transition:border-color .3s,box-shadow .3s}
 .shot:hover{border-color:var(--border);box-shadow:var(--shadow)}
-.shot__ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:20px;
-  font-family:'Space Grotesk',sans-serif;font-weight:500;font-size:16px;color:var(--violet-300);opacity:.55}
 .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;
   transition:transform .5s var(--ease)}
 .shot:hover img{transform:scale(1.06)}
-.shot figcaption{position:relative;width:100%;padding:14px 16px;font-size:13.5px;color:var(--fg);
-  background:linear-gradient(180deg,transparent,rgba(10,7,17,.85));z-index:1}
 
-/* ============ CAROUSEL ============ */
-.carousel{position:relative;padding:0 64px}
-.carousel__viewport{overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;
-  scrollbar-width:none;-ms-overflow-style:none;border-radius:var(--radius)}
-.carousel__viewport::-webkit-scrollbar{display:none}
-.carousel__viewport:focus-visible{outline:2px solid var(--violet-400);outline-offset:4px}
-.carousel__track{display:flex;gap:18px;list-style:none;margin:0;padding:2px}
-.carousel__slide{flex:0 0 auto;width:calc((100% - 2*18px)/3);scroll-snap-align:start;cursor:grab}
-.carousel__slide:active{cursor:grabbing}
+/* corner registration marks — one pseudo-element, 4 two-layer brackets, no extra markup */
+.shot::before{content:"";position:absolute;inset:14px;pointer-events:none;z-index:2;opacity:.5;
+  transition:opacity .3s;
+  background:
+    linear-gradient(to right,var(--violet-400) 2px,transparent 2px) top left/16px 2px no-repeat,
+    linear-gradient(to bottom,var(--violet-400) 2px,transparent 2px) top left/2px 16px no-repeat,
+    linear-gradient(to left,var(--violet-400) 2px,transparent 2px) top right/16px 2px no-repeat,
+    linear-gradient(to bottom,var(--violet-400) 2px,transparent 2px) top right/2px 16px no-repeat,
+    linear-gradient(to right,var(--violet-400) 2px,transparent 2px) bottom left/16px 2px no-repeat,
+    linear-gradient(to top,var(--violet-400) 2px,transparent 2px) bottom left/2px 16px no-repeat,
+    linear-gradient(to left,var(--violet-400) 2px,transparent 2px) bottom right/16px 2px no-repeat,
+    linear-gradient(to top,var(--violet-400) 2px,transparent 2px) bottom right/2px 16px no-repeat}
+.shot:hover::before{opacity:1}
 
-.carousel__arrow{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;
-  border-radius:50%;display:grid;place-items:center;border:1px solid var(--border);
-  background:rgba(21,15,34,.85);backdrop-filter:blur(8px);color:var(--fg);cursor:pointer;z-index:2;
-  transition:background .25s,border-color .25s,transform .25s var(--ease)}
-.carousel__arrow svg{width:20px;height:20px}
-.carousel__arrow:hover{background:var(--grad);border-color:transparent;transform:translateY(-50%) scale(1.06)}
-.carousel__arrow:disabled{opacity:.35;pointer-events:none}
-.carousel__arrow--prev{left:0}
-.carousel__arrow--next{right:0}
+.shot figcaption{position:relative;width:100%;display:flex;flex-direction:column;gap:4px;
+  padding:14px 16px;z-index:1;
+  background:linear-gradient(180deg,transparent,rgba(10,7,17,.85))}
+.shot__title{font-size:13.5px;color:var(--fg)}
+.shot__meta{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:var(--violet-300)}
 
-.carousel__dots{display:flex;justify-content:center;gap:9px;margin-top:24px}
-.carousel__dot{width:8px;height:8px;border-radius:50%;background:var(--border-2);border:0;padding:0;
-  cursor:pointer;transition:background .3s,width .3s var(--ease)}
-.carousel__dot.is-active{width:24px;border-radius:5px;background:var(--grad)}
+@media(max-width:960px){
+  .works-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:190px}
+  .shot--wide{grid-column:span 2}
+}
+@media(max-width:640px){
+  .works-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:14px}
+  .shot--feature,.shot--wide{grid-column:span 1;grid-row:span 1}
+  .works-grid .shot{aspect-ratio:4/3}
+}
 
 /* ============ WHY (tabbed nav + detail panel) ============ */
 .why-tabs{display:grid;grid-template-columns:.85fr 1.15fr;gap:0;
