@@ -3,55 +3,47 @@
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ---- mobile nav (with focus trap) ---- */
-  var burger = document.querySelector('.burger');
-  var mobileNav = document.getElementById('mobile-nav');
-  if (burger && mobileNav) {
-    function focusableIn(el) {
-      return Array.prototype.slice.call(
-        el.querySelectorAll('a[href], button:not([disabled])')
-      );
+  /* ---- mobile dock: highlight the item matching the section in view ---- */
+  (function initMobileDock() {
+    var dock = document.querySelector('.mobile-dock');
+    if (!dock) return;
+    var items = Array.prototype.slice.call(dock.querySelectorAll('[data-dock-target]'));
+    if (!items.length) return;
+
+    var byId = {};
+    items.forEach(function (a) { byId[a.getAttribute('data-dock-target')] = a; });
+
+    var sections = items
+      .map(function (a) { return document.getElementById(a.getAttribute('data-dock-target')); })
+      .filter(Boolean);
+    if (!sections.length || !('IntersectionObserver' in window)) return;
+
+    var current = null;
+    function setActive(id) {
+      if (id === current) return;
+      if (current && byId[current]) byId[current].classList.remove('is-active');
+      if (id && byId[id]) byId[id].classList.add('is-active');
+      current = id;
     }
 
-    function closeMobileNav(returnFocus) {
-      burger.setAttribute('aria-expanded', 'false');
-      mobileNav.hidden = true;
-      if (returnFocus) burger.focus();
+    /* classic scroll-spy: a thin detection band just under the sticky header —
+       whichever tracked section currently overlaps it is "active". Recomputed
+       from scratch on every callback (not from the changed entries alone), so
+       scrolling back above all sections correctly clears the highlight instead
+       of leaving the last-matched one stuck. */
+    function refresh() {
+      var bandTop = 76, bandBottom = window.innerHeight * 0.35;
+      var activeId = null;
+      sections.forEach(function (s) {
+        var r = s.getBoundingClientRect();
+        if (r.top < bandBottom && r.bottom > bandTop) activeId = s.id;
+      });
+      setActive(activeId);
     }
 
-    function openMobileNav() {
-      burger.setAttribute('aria-expanded', 'true');
-      mobileNav.hidden = false;
-      var items = focusableIn(mobileNav);
-      if (items.length) items[0].focus();
-    }
-
-    burger.addEventListener('click', function () {
-      var open = burger.getAttribute('aria-expanded') === 'true';
-      if (open) closeMobileNav(false); else openMobileNav();
-    });
-
-    mobileNav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { closeMobileNav(false); });
-    });
-
-    mobileNav.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') {
-        e.preventDefault();
-        closeMobileNav(true);
-        return;
-      }
-      if (e.key !== 'Tab') return;
-      var items = focusableIn(mobileNav);
-      if (!items.length) return;
-      var first = items[0], last = items[items.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault(); last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault(); first.focus();
-      }
-    });
-  }
+    var io = new IntersectionObserver(refresh, { threshold: 0, rootMargin: '-76px 0px -65% 0px' });
+    sections.forEach(function (s) { io.observe(s); });
+  })();
 
   /* ---- hero split-text intro ---- */
   function splitWords(el) {
